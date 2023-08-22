@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : capstone
-Version  : 5.0
-Release  : 3
-URL      : https://github.com/aquynh/capstone/archive/5.0/capstone-5.0.tar.gz
-Source0  : https://github.com/aquynh/capstone/archive/5.0/capstone-5.0.tar.gz
+Version  : 5.0.1
+Release  : 4
+URL      : https://github.com/aquynh/capstone/archive/5.0.1/capstone-5.0.1.tar.gz
+Source0  : https://github.com/aquynh/capstone/archive/5.0.1/capstone-5.0.1.tar.gz
 Summary  : A lightweight multi-platform, multi-architecture disassembly framework
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause NCSA
@@ -64,15 +64,15 @@ license components for the capstone package.
 
 
 %prep
-%setup -q -n capstone-5.0
-cd %{_builddir}/capstone-5.0
+%setup -q -n capstone-5.0.1
+cd %{_builddir}/capstone-5.0.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688580685
+export SOURCE_DATE_EPOCH=1692730560
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -114,7 +114,7 @@ cd ../clr-build-avx2;
 make test || :
 
 %install
-export SOURCE_DATE_EPOCH=1688580685
+export SOURCE_DATE_EPOCH=1692730560
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/capstone
 cp %{_builddir}/capstone-%{version}/LICENSE.TXT %{buildroot}/usr/share/package-licenses/capstone/861af24907e399e873920dbbff1ea1dd73a9ba35 || :
