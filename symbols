@@ -253,6 +253,7 @@ libcapstone.so.5:X86_insn_reg_intel
 libcapstone.so.5:X86_insn_reg_intel2
 libcapstone.so.5:X86_lockrep
 libcapstone.so.5:X86_option
+libcapstone.so.5:X86_postprinter
 libcapstone.so.5:X86_reg_access
 libcapstone.so.5:X86_reg_name
 libcapstone.so.5:X86_register_map
