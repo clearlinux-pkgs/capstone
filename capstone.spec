@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : capstone
-Version  : 5.0.2
-Release  : 6
-URL      : https://github.com/aquynh/capstone/archive/5.0.2/capstone-5.0.2.tar.gz
-Source0  : https://github.com/aquynh/capstone/archive/5.0.2/capstone-5.0.2.tar.gz
+Version  : 5.0.3
+Release  : 7
+URL      : https://github.com/aquynh/capstone/archive/5.0.3/capstone-5.0.3.tar.gz
+Source0  : https://github.com/aquynh/capstone/archive/5.0.3/capstone-5.0.3.tar.gz
 Summary  : A lightweight multi-platform, multi-architecture disassembly framework
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause NCSA
@@ -66,10 +66,10 @@ license components for the capstone package.
 
 
 %prep
-%setup -q -n capstone-5.0.2
-cd %{_builddir}/capstone-5.0.2
+%setup -q -n capstone-5.0.3
+cd %{_builddir}/capstone-5.0.3
 pushd ..
-cp -a capstone-5.0.2 buildavx2
+cp -a capstone-5.0.3 buildavx2
 popd
 
 %build
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1723472113
+export SOURCE_DATE_EPOCH=1724174150
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -149,7 +149,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1723472113
+export SOURCE_DATE_EPOCH=1724174150
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/capstone
 cp %{_builddir}/capstone-%{version}/LICENSE.TXT %{buildroot}/usr/share/package-licenses/capstone/861af24907e399e873920dbbff1ea1dd73a9ba35 || :
@@ -209,9 +209,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libcapstone.so.5.0.2
+/V3/usr/lib64/libcapstone.so.5.0.3
 /usr/lib64/libcapstone.so.5
-/usr/lib64/libcapstone.so.5.0.2
+/usr/lib64/libcapstone.so.5.0.3
 
 %files license
 %defattr(0644,root,root,0755)
